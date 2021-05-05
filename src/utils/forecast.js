@@ -18,14 +18,15 @@ const forecastRequest = (lat, lon, callback) => {
             let msg = `[${body.error.code}]  ${body.error.info}`
             callback(msg, undefined);
         } else {
-            // const weatherMsg = `[${weather_descriptions[0]}]  It is currently ${temperature}-F out there (feels like ${feelslike}-F). The humidity level is ${humidity}%.`
+            const weatherMsg = `<b>Current conditions:</b>  ${weather_descriptions[0]} <p> It is currently ${temperature}-F out there (feels like ${feelslike}-F). The humidity level is ${humidity}%.</p>`
 
             const forecastData = {
                 forecast: weather_descriptions,
                 temperature,
                 feelslike,
                 humidity,
-                localtime: body.location.localtime
+                localtime: body.location.localtime,
+                weatherMsg
             }
 
             callback(undefined, forecastData)

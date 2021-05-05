@@ -21,7 +21,8 @@ weatherForm.addEventListener('submit', (e) => {
         .then(data => {
             if(data.error) msgOne.innerHTML = data.error;
             else {
-                msgOne.innerHTML = data.temperature;
+                msgOne.innerHTML = `<h3>${location.toUpperCase()}</h3>`
+                msgTwo.innerHTML = data.weatherMsg;
             }
         });
 });
