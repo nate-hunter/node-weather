@@ -1,8 +1,6 @@
 const request = require('postman-request');
 
 const MAPBOX_TOKEN = `pk.eyJ1IjoiZ2VvLW5qaCIsImEiOiJja2tlbm0wMG4wYTZxMnRvOWgzMW40MnZrIn0.THEKmBrpYOVAQ-15u4bEMA`
-// const geoLocation = '';  // Los%20Angeles
-// const MAPBOX_URL = `https://api.mapbox.com/geocoding/v5/mapbox.places/${geoLocation}.json?access_token=${MAPBOX_TOKEN}&limit=1`
 
 const geocodeRequest = (location, callback) => {
     const uriLocation = encodeURIComponent(location);
